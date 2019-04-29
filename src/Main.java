@@ -20,7 +20,7 @@ public class Main {
 
             how_many_rooms = (int) Math.floor((Math.random() * 5) + 10);
 
-            game_rooms_loop:
+//            game_rooms_loop:
             for (int i = 0; i < how_many_rooms; i++) {
 
                 current_room = i + 1;
@@ -66,7 +66,7 @@ public class Main {
 
     }
 
-    static int battle(Person hero, List<Person> list_of_enemies, int room_number, int battle_number) {
+    private static int battle(Person hero, List<Person> list_of_enemies, int room_number, int battle_number) {
 
         Person selected_enemy = null;
         int dealed_damage;
@@ -77,6 +77,7 @@ public class Main {
             enemy.status_print();
         }
 
+//        Get player action choice
         int player_action = hero.choose_an_action();
 
         switch (player_action) {
@@ -151,6 +152,7 @@ public class Main {
 //        Every enemy attack turn by turn
         for (Person enemy : list_of_enemies) {
 
+//            Get enemy action choice
             int cpu_action = (int) Math.floor((Math.random() * 3) + 1);
 
             switch (cpu_action) {
